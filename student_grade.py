@@ -27,34 +27,35 @@ def is_pass(marks):
     return avg >= 40
 
 
-name = input("Enter student name: ")
-department = input("Enter department: ")
-semester = input("Enter semester: ")
+if __name__ == "__main__":
+    name = input("Enter student name: ")
+    department = input("Enter department: ")
+    semester = input("Enter semester: ")
 
-marks = []
+    marks = []
 
-for i in range(1, 4):
-    while True:
-        mark = float(input(f"Enter marks for subject {i}: "))
+    for i in range(1, 4):
+        while True:
+            mark = float(input(f"Enter marks for subject {i}: "))
 
-        if valid_mark(mark):
-            marks.append(mark)
-            break
-        else:
-            print("Invalid marks! Enter marks between 0 and 100.")
+            if valid_mark(mark):
+                marks.append(mark)
+                break
+            else:
+                print("Invalid marks! Enter marks between 0 and 100.")
 
-avg = average(marks)
-student_grade = grade(avg)
+    avg = average(marks)
+    student_grade = grade(avg)
 
-print("\n------ STUDENT RESULT ------")
-print("Name:", name)
-print("Department:", department)
-print("Semester:", semester)
-print("Marks:", marks)
-print("Average:", avg)
-print("Grade:", student_grade)
+    print("\n------- STUDENT RESULT -------")
+    print("Name:", name)
+    print("Department:", department)
+    print("Semester:", semester)
+    print("Marks:", marks)
+    print("Average:", avg)
+    print("Grade:", student_grade)
 
-if is_pass(marks):
-    print("Result: PASS")
-else:
-    print("Result: FAIL")
+    if is_pass(marks):
+        print("Result: PASS")
+    else:
+        print("Result: FAIL")
